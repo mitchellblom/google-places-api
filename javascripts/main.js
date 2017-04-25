@@ -1,11 +1,18 @@
 $(document).ready(function(){
 
 const apiKey = "";				// key goes here
+let resultNames;
 
 $("body").on("click", "li", (e) => {
 	// console.log(e.target.innerHTML);
 	loadPlaces(e.target.innerHTML).then((data) => {
 		console.log(data);
+		resultNames = data.results;
+		console.log(resultNames);
+		resultNames.forEach((each)=> {
+			let string = `<p>${each.name}</p>`;
+			$("#name-div").append(string);
+		})
 	}).catch((error) => {
 		console.log(error);
 	})
