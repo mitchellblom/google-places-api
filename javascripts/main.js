@@ -6,14 +6,10 @@ let resultNames;
 $("body").on("click", "li", (e) => {
 	// console.log(e.target.innerHTML);
 	loadPlaces(e.target.innerHTML).then((data) => {
-		console.log(data);
-		resultNames = data.results;
-		console.log(resultNames);
-		resultNames.forEach((each)=> {
-			let string = `<p>${each.name}</p>`;
-			$("#name-div").append(string);
+		results = data.results;
+			writeToDom(results);
 		})
-	}).catch((error) => {
+	.catch((error) => {
 		console.log(error);
 	})
 });
@@ -27,4 +23,15 @@ $("body").on("click", "li", (e) => {
 				.fail((error) => reject(error));
 		});
 	};
+
+	const writeToDom = (results) => {
+		results.forEach((each)=> {
+			let string = `<p>${each.name}</p>`;
+			$("#name-div").append(string);
+
+	});
+
+	}
+
+
 });
