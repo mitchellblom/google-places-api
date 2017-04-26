@@ -1,0 +1,14 @@
+@import 'color';
+
+#name-div {
+	background-color: $maroon;
+
+	a {
+		color: $yellow;
+	}
+
+	div {
+		padding: 5px;
+	}
+
+}

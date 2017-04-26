@@ -9,7 +9,7 @@ const apiKey = '';								// key goes here
 			})
 		.catch((error) => {
 			console.log(error);
-		})
+		});
 	});
 
 	$('body').on('click', '.place', (e) => {
@@ -25,10 +25,10 @@ const apiKey = '';								// key goes here
 				placeid=${place_id}&key=${apiKey}
 			`)
 			.done((data) => {
-				resolve(data.result)		// this result is getting back to line 17 for the then()
+				resolve(data.result);		// this result is getting back to line 17 for the then()
 			})
 			.fail((error) => {
-				reject(error)
+				reject(error);
 			});
 		});
 	};
@@ -46,7 +46,7 @@ const apiKey = '';								// key goes here
 	const writeAddressToDom = (address) => {
 			let string = `<div>${address}</div>`;
 			$('#address-div').html(string);
-	}
+	};
 
 	const writePlaceToDom = (placeName) => {
 		placeName.forEach((each) => {
@@ -60,7 +60,7 @@ const apiKey = '';								// key goes here
 			$('#name-div').append(string);
 
 		});
-	}
+	};
 
 
 });

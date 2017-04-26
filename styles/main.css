@@ -1,0 +1,11 @@
+#name-div {
+  background-color: #85144b; }
+  #name-div a {
+    color: #FFDC00; }
+  #name-div div {
+    padding: 5px; }
+
+#address-div {
+  background-color: #39CCCC; }
+  #address-div div {
+    font-family: "Luckiest Guy", cursive; }
